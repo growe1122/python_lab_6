@@ -1,4 +1,4 @@
-#  Lab 6: Software Engineering
+#  Lab 6: Software Engineering, Mary Rowe
 
 def encode(raw_password_string):  # encodes password by adding 3 to each digit
     #  raw_password_string = '12345555'
