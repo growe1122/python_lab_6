@@ -10,6 +10,13 @@ def encode(raw_password_string):  # encodes password by adding 3 to each digit
     # encoded_password_string = '45678888'
     return encoded_password_string
 
+def decode(encoded_password_string): #password decoder function
+    decoded_password_list = []
+    encoded_password_list = list(encoded_password_string)
+    for elem in encoded_password_list:
+        decoded_password_list.append(str((int(elem) - 3) % 10))
+    decoded_password_string = ''.join(decoded_password_list)
+    return decoded_password_string
 
 def main():
 
@@ -21,10 +28,10 @@ def main():
         if option == 1:  # encode password
             decoded_password = input('Please enter your password to encode: ')
             encoded_password = encode(decoded_password)
-            print(encoded_password)
+            # print(encoded_password)           # removed this as it was not asked for in sample output - Waleed
             print('Your password has been encoded and stored!')
-        elif option == 2:  # decode password
-            pass  # write decode alg here
+        elif option == 2:  # decode password option added using decode() function
+            print("The encoded password is", encoded_password, "and the original password is", decoded_password)
         elif option == 3:
             option_quit = True
 
